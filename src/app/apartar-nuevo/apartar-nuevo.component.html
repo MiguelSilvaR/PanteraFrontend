@@ -1,0 +1,89 @@
+<div class="container border my-5 animated fast fadeIn" style="background: #E8E8E8;">
+    <h2 class="col my-5 ml-2">Crear nueva reservación</h2>
+    <form action="" class="mt-4">
+        <div class="row mt-5">
+            <h3 class="col-6 text-center mb-4">Edificio</h3>
+            <h3 class="col-6 text-center mb-4">Aula</h3>
+        </div>
+        <div class="row d-flex justify-content-around mb-5">
+            <input list="edificios" value="" class="col-5 custom-select custom-select-sm">
+            <input list="aulas" value="" class="col-5 custom-select custom-select-sm">
+            <datalist id="edificios">
+                <option value="Aulas 1">Aulas 1</option>
+                <option value="Aulas 2">Aulas 2</option>
+                <option value="Aulas 3">Aulas 3</option>
+                <option value="Aulas 4">Aulas 4</option>
+                <option value="Biblioteca sur">Biblioteca sur </option>
+                <option value="Biblioteca norte">Biblioteca norte</option>
+            </datalist>
+            <datalist id="aulas">
+                    <option value="1201">1201</option>
+                    <option value="1206">1206</option>
+                    <option value="1301">1301</option>
+                    <option value="1305">1305</option>
+                    <option value="1402">1402</option>
+            </datalist>
+        </div>
+        <div class="row px-4 mb-2">
+            <div class="col">
+                <h3>Selecciona el periodo de tu reservación</h3>
+            </div>
+        </div>
+        <div class="ml-2 mt-5 form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Fecha inicio:</label>
+            <div class="col-sm-10">
+                <input type="date" id="fecha-inicio" class="form-control" name="fecha-inicio" value="2019-08-22"
+                    min="2019-01-01" max="2019-12-31">
+            </div>
+        </div>
+        <div class="ml-2 form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Fecha final:</label>
+            <div class="col-sm-10">
+                <input type="date" id="fecha-inicio" class="form-control" name="fecha-inicio" value="2019-08-22"
+                    min="2019-01-01" max="2019-12-31">
+            </div>
+        </div>
+        <div class="row px-4 mt-5">
+            <div class="col">
+                <h3>Selecciona los días de uso del salón</h3>
+            </div>
+        </div>
+        <div class="row px-4 mb-5 mx-5 mt-5">
+            <div class="col">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" id="lunes"
+                        value="lunes">Lunes</label><br>
+            </div>
+            <div class="col">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" id="martes"
+                        value="martes">Martes</label><br>
+            </div>
+            <div class="col">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" id="miercoles"
+                        value="miercoles">Miércoles</label><br>
+            </div>
+            <div class="col">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" id="jueves"
+                        value="jueves">Jueves</label><br>
+            </div>
+            <div class="col">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" id="viernes"
+                        value="viernes">Viernes</label><br>
+            </div>
+        </div>
+        <div class="row px-4 mb-2">
+            <div class="col">
+                <h3>Selecciona las horas que usarás el salón</h3>
+            </div>
+        </div>
+        <div class="hours-container my-5">
+            <div class="hour-container">
+                <div class="hour-label">Hora inicio:</div>
+                <input type="time" class="hour-input">
+            </div>
+            <div class="hour-container">
+                <div class="hour-label">Hora fin:</div>
+                <input type="time" class="hour-input" id="horaFin">
+            </div>
+        </div>
+    </form>
+</div>
