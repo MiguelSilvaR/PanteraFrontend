@@ -1,0 +1,46 @@
+.login-form{
+    background:rgba($color: white, $alpha: 0.7);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 50%;
+}
+
+.form-container {
+    background:  white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    height: 100vh;
+}
+
+p,label,input[type="text"], input[type="password"] {
+    width: 100%;
+}
+
+p {
+    font-weight: bold;
+}
+
+img {
+    width: 7em;
+}
+
+input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #707070;
+    background: #F8F8F8;
+    &:focus {
+        background: white;
+    }
+}
