@@ -1,15 +1,22 @@
 <div class="container d-flex justify-content-center align-items-center">
-    <div class="login-form p-5">    
+    <div class="login-form p-5">
         <div class="img-container mb-4">
             <img src="assets/img/logo-negro.png" alt="">
         </div>
         <p class="mb-4 text-center">¡Bienvenido al sistema pantera, por favor inicie sesión!</p>
-        <div class="form-container p-3">
-            <label for="user">Nómina</label>
-            <input class="mb-3" type="text">
-            <label for="password">Contraseña</label>
-            <input type="password" name="contra" id="" class="mb-4">
-            <button class="btn btn-primary"> Entrar</button>
-        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <p *ngIf="loginForm.controls['user'].errors?.incorrect"
+                [ngClass]="{ 'invalido': loginForm.controls['user'].errors?.incorrect}">
+                Contraseña o usuario incorrecto
+            </p>
+            <div class="form-container p-3">
+                <label for="user">Nómina</label>
+                <input class="mb-3" type="text" formControlName="user">
+                <label for="password">Contraseña</label>
+                <input type="password" name="contra" id="" class="mb-4" formControlName="password">
+                <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid"> Entrar</button>
+            </div>
+        </form>
+
     </div>
 </div>

@@ -1,30 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 
+.invalido {
+  font-size: 15px;
+  color: red;
+}
+
 /* Animaciones */
 .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .fast {
-    -webkit-animation-duration: 0.4s;
-    animation-duration: 0.4s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+
+  to {
+    opacity: 1;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fadeIn {
-    animation-name: fadeIn;
-  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
