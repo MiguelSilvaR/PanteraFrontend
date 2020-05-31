@@ -7,3 +7,11 @@ export const login = gql`
         }
     }
 ` 
+
+export const psv = gql`
+    mutation psv ($information:createCSVInput!) {
+        createCSV(input:$information){
+            id
+        }
+    }
+`   

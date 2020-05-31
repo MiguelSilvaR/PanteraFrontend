@@ -13,6 +13,13 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { LoginComponent } from './login/login.component';
 import { GraphqlModule } from './graphql/graphql.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CalendarComponent } from './Shared/calendar/calendar.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es-MX';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -22,7 +29,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     DashboardComponent,
     ApartadoComponent,
     ApartarNuevoComponent,
-    LoginComponent
+    LoginComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     GraphqlModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
