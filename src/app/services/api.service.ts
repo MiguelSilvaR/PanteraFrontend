@@ -3,7 +3,7 @@ import { Apollo } from 'apollo-angular';
 import { myReservations, fastReservation } from '../operations/query';
 import { HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { psv } from '../operations/mutation';
+import { psv, crearReservacion } from '../operations/mutation';
 
 @Injectable({
   providedIn: 'root'
@@ -48,10 +48,27 @@ export class ApiService {
   }
 
   postPSV(information) {
+    let token = localStorage.getItem("token")
     return this.apollo.mutate({
       mutation: psv,
       variables: {
         information
+      },
+      context: {
+        headers: new HttpHeaders().set('x-token',token)
+      }
+    });
+  }
+
+  createReservation(reservation) {
+    let token = localStorage.getItem("token")
+    return this.apollo.mutate({
+      mutation: crearReservacion,
+      variables: {
+        reservation
+      },
+      context: {
+        headers: new HttpHeaders().set('x-token',token)
       }
     });
   }

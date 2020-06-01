@@ -20,6 +20,7 @@ export const fastReservation = gql`
     query fastReservation ($filter:roomsFilter!) {
         bookableRooms(filter:$filter){
             name
+            id
             building {
                 name
             }

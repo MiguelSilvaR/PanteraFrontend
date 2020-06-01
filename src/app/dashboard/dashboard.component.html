@@ -35,7 +35,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Reserva en {{ res.building.name }}:</h5>
                     <p class="card-text">{{ res.name }}</p>
-                    <a href="#" class="btn btn-primary">Reservar</a>
+                    <a class="btn btn-primary" (click)="makeReservation(res.id, res.name)">Reservar</a>
                 </div>
             </div>
         </div>

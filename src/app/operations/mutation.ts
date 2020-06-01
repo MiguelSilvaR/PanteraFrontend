@@ -15,3 +15,14 @@ export const psv = gql`
         }
     }
 `   
+export const crearReservacion = gql`
+    mutation crearReservacion ($reservation:createReservationInput!) {
+    createReservation(input:$reservation) {
+            createdAt
+            user {
+                name
+            }
+            id
+        }
+    }
+`   

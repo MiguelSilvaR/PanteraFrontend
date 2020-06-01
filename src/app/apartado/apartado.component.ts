@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-apartado',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApartadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
   }
