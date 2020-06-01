@@ -3,6 +3,7 @@ import gql from 'graphql-tag'
 export const myReservations = gql`
     query reservaciones{
         myReservations {
+            id
             start
             end
             room{

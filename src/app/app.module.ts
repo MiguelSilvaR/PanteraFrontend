@@ -18,6 +18,7 @@ import { CalendarComponent } from './Shared/calendar/calendar.component';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es-MX';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PsvComponent } from './psv/psv.component';
 
 registerLocaleData(localeEs);
 
@@ -30,7 +31,8 @@ registerLocaleData(localeEs);
     ApartadoComponent,
     ApartarNuevoComponent,
     LoginComponent,
-    CalendarComponent
+    CalendarComponent,
+    PsvComponent
   ],
   imports: [
     BrowserModule,

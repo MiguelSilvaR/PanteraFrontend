@@ -5,6 +5,7 @@ import { ApartadoComponent } from "./apartado/apartado.component";
 import { ApartarNuevoComponent } from "./apartar-nuevo/apartar-nuevo.component";
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PsvComponent } from './psv/psv.component';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "apartado", component: ApartadoComponent, canActivate: [AuthGuard] },
   { path: "apartar-nuevo", component: ApartarNuevoComponent, canActivate: [AuthGuard] },    
   { path: "login", component: LoginComponent },
+  { path: "psv", component: PsvComponent, canActivate: [AuthGuard] },
   { path: "**", pathMatch: "full", redirectTo: "login" }
 ];
 

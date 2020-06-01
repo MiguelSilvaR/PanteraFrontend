@@ -203,7 +203,7 @@ export class DashboardComponent implements OnInit {
       text: `Reservaste con éxito`,
       icon: 'success',
     }).then(() => {
-      this.router.navigate(["dashboard"])
+      this.router.navigate(["apartado"])
     })
   }
 }

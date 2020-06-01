@@ -3,7 +3,7 @@
         <div class="img-container mb-4">
             <img src="assets/img/logo-negro.png" alt="">
         </div>
-        <p class="mb-4 text-center">¡Bienvenido al sistema pantera, por favor inicie sesión!</p>
+        <p class="mb-4 text-center">¡Bienvenido al sistema Pantera, por favor inicie sesión!</p>
         <form [formGroup]="loginForm" (ngSubmit)="login()">
             <p *ngIf="loginForm.controls['user'].errors?.incorrect"
                 [ngClass]="{ 'invalido': loginForm.controls['user'].errors?.incorrect}">

@@ -20,6 +20,12 @@
                     <li class="nav-item" routerLinkActive="active">
                         <a class="nav-link mr-2" [routerLink]="['/apartado']">Mis reservaciones</a>
                     </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link mr-2" [routerLink]="['/psv']">Ingresar programación</a>
+                    </li>
+                </ul>
+                <ul class="d-flex align-items-center logout">
+                    <button class="btn btn-light" (click)="logout()">Cerrar Sesión</button>
                 </ul>
             </div>
         </div>
