@@ -26,3 +26,14 @@ export const crearReservacion = gql`
         }
     }
 `   
+export const updateReservation = gql`
+    mutation updateReservation($input:updateReservationInput!){
+        updateReservation(input:$input)
+    }
+`
+
+export const deleteReservation = gql`
+    mutation deleteReservation($input:deleteReservationInput!) {
+        deleteReservation(input:$input)
+    }
+`

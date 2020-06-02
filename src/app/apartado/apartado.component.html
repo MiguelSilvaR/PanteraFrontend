@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ res.name }}</h5>
                 <p class="card-text">{{ res.start | date }} <br> {{ res.start | date: "HH:mm" }} - {{ res.end | date: "HH:mm" }}</p>
-                <a href="#" class="btn btn-primary">Ver información</a>
+                <a class="btn btn-primary" [routerLink]="['/reservacion', res.id, res.room.id]" routerLinkActive="router-link-active" >Ver información</a>
             </div>
         </div>
     </div>

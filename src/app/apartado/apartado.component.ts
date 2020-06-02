@@ -9,7 +9,8 @@ import Swal from "sweetalert2";
 })
 export class ApartadoComponent implements OnInit {
 
-  constructor(private api:ApiService) { }
+  constructor(
+    private api:ApiService    ) { }
 
   myReservations = []
 

@@ -11,6 +11,7 @@ export const myReservations = gql`
                 name
             }
             user {
+                id
                 name
             }
         }
@@ -23,8 +24,44 @@ export const fastReservation = gql`
             name
             id
             building {
+                id
                 name
             }
         }
     }
 ` 
+export const getOneReservation = gql`
+    query getOneReservation($id:ID!) {
+        reservation(id:$id){
+            id
+            start
+            end
+            room {
+                id
+                name
+                building {
+                    id
+                    name
+                }
+            }
+        }
+    }
+`
+
+export const getAllReservationsOfARoom = gql`
+    query getAllReservationsOfARoom($filter:reservationsFilter!){
+        reservations(filter:$filter){
+            id
+            start
+            end
+            user {
+                id
+                name
+            }
+            room {
+                id
+                name
+            }
+        }
+    }
+`

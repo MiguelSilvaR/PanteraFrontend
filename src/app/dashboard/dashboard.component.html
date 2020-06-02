@@ -16,12 +16,12 @@
         <div class="row d-flex mb-3">
             <div class="col-6 ml-2 form-group row justify-content-center">
                 <div class="col-sm-10 d-flex justify-content-center">
-                    <ngb-timepicker [(ngModel)]="timeStart"></ngb-timepicker>
+                    <ngb-timepicker (ngModelChange)="clearReservations($event)" [(ngModel)]="timeStart"></ngb-timepicker>
                 </div>
             </div>
             <div class="col-6 ml-2 form-group row justify-content-center">
                 <div class="col-sm-10 d-flex justify-content-center">
-                    <ngb-timepicker [(ngModel)]="timeEnd"></ngb-timepicker>
+                    <ngb-timepicker (ngModelChange)="clearReservations($event)" [(ngModel)]="timeEnd"></ngb-timepicker>
                 </div>
             </div>
         </div>

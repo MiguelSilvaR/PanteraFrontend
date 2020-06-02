@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { myReservations, fastReservation } from '../operations/query';
+import { myReservations, fastReservation, getOneReservation, getAllReservationsOfARoom } from '../operations/query';
 import { HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { psv, crearReservacion } from '../operations/mutation';
+import { psv, crearReservacion, updateReservation, deleteReservation } from '../operations/mutation';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +47,42 @@ export class ApiService {
     )
   }
 
+  getOneReservation(id) {
+    let token = localStorage.getItem("token")
+    return this.apollo.watchQuery({
+      query: getOneReservation,
+      variables: {
+        id
+      },
+      fetchPolicy: "network-only",
+      context: {
+        headers: new HttpHeaders().set('x-token',token)
+      }
+    }).valueChanges.pipe(
+      map((result: any) => {
+        return result.data.reservation;
+      })
+    )
+  }
+
+  getReservationsByRoomId(filter) {
+    let token = localStorage.getItem("token")
+    return this.apollo.watchQuery({
+      query: getAllReservationsOfARoom,
+      variables: {
+        filter
+      },
+      fetchPolicy: "network-only",
+      context: {
+        headers: new HttpHeaders().set('x-token',token)
+      }
+    }).valueChanges.pipe(
+      map((result: any) => {
+        return result.data.reservations;
+      })
+    )
+  }
+
   postPSV(information) {
     let token = localStorage.getItem("token")
     return this.apollo.mutate({
@@ -72,4 +108,31 @@ export class ApiService {
       }
     });
   }
+
+  updateReservation(input) {
+    let token = localStorage.getItem("token")
+    return this.apollo.mutate({
+      mutation: updateReservation,
+      variables: {
+        input
+      },
+      context: {
+        headers: new HttpHeaders().set('x-token',token)
+      }
+    });
+  }
+
+  deleteReservation(input) {
+    let token = localStorage.getItem("token")
+    return this.apollo.mutate({
+      mutation: deleteReservation,
+      variables: {
+        input
+      },
+      context: {
+        headers: new HttpHeaders().set('x-token',token)
+      }
+    });
+  }
+  
 }

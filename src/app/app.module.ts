@@ -19,6 +19,7 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es-MX';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PsvComponent } from './psv/psv.component';
+import { VerReservacionComponent } from './ver-reservacion/ver-reservacion.component';
 
 registerLocaleData(localeEs);
 
@@ -32,7 +33,8 @@ registerLocaleData(localeEs);
     ApartarNuevoComponent,
     LoginComponent,
     CalendarComponent,
-    PsvComponent
+    PsvComponent,
+    VerReservacionComponent
   ],
   imports: [
     BrowserModule,

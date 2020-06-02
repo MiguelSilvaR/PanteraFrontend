@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 import { ApiService } from '../services/api.service';
 import { colors } from '../Shared/const/colors';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
       label: '<i class="fas fa-fw fa-pencil-alt"></i>',
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: CalendarEvent }): void => {
-        console.log(event)
+        this.router.navigate([`reservacion/${event.meta.idRes}/${event.meta.idRoom}/`])
       },
     }
   ]
@@ -40,12 +41,18 @@ export class DashboardComponent implements OnInit {
   constructor(
     private elementRef: ElementRef,
     private api: ApiService,
-    private router: Router) { }
+    private router: Router,
+    private auth:AuthService
+    ) { }
 
   ngOnInit() {
     this.showLoading();
     this.getMyreservations()
     this.elementRef.nativeElement.ownerDocument.body.style.background = "white"
+  }
+
+  clearReservations(event?) {
+    this.resultsFastRes = []
   }
 
   showLoading() {
@@ -85,7 +92,7 @@ export class DashboardComponent implements OnInit {
       title: 'Oops...',
       text: 'Algo salió mal, contacte al administrador'
     }).then(() => {
-      //logout
+      this.auth.logout()
     })
   }
 
@@ -104,12 +111,17 @@ export class DashboardComponent implements OnInit {
       end: new Date(res.end),
       title,
       color,
-      actions: this.actions
+      actions: this.actions,
+      meta: {
+        idRes: res.id,
+        idRoom: res.room.id
+      }
     }
     return myRes;
   }
 
   modelChanged() {
+    this.clearReservations()
     this.errMessage = ""
     console.log(this.timeStart, this.timeEnd)
 
