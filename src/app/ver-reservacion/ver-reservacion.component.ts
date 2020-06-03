@@ -168,7 +168,8 @@ export class VerReservacionComponent implements OnInit {
       id: this.idRes
     }
     let deleteSubs = this.api.deleteReservation(input).subscribe(({data}) => {
-      deleteSubs.unsubscribe()      
+      deleteSubs.unsubscribe()
+      this.showSuccess();
     },(err) => {
       console.log(err)
       this.showErr()
